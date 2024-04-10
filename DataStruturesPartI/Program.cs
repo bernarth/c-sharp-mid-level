@@ -14,6 +14,7 @@ class Program
 
         var data = queue.Dequeue();
 
+        Console.WriteLine("============Dequeue============");
         Console.WriteLine(data);
 
         while (!queue.IsEmpty())
@@ -22,5 +23,28 @@ class Program
         }
 
         // Custom Stack
+        var stack = new MyStack<int>();
+        stack.Push(1);
+        stack.Push(2);
+        stack.Push(3);
+
+        Console.WriteLine("============Stack pop============");
+        var dataStack = stack.Pop();
+        Console.WriteLine(dataStack);
+
+        var dataStack1 = stack.Pop();
+        Console.WriteLine(dataStack1);
+
+        var dataStack2 = stack.Pop();
+        Console.WriteLine(dataStack2);
+
+        stack.Push(4);
+        stack.Push(5);
+        stack.Push(6);
+
+        while (!stack.IsEmpty())
+        {
+            Console.WriteLine(stack.Pop());
+        }
     }
 }
