@@ -22,5 +22,15 @@ class Program
         }
 
         // Custom Stack
+        var stack = new MyStack<int>();
+        stack.AddStack(1);
+        stack.AddStack(2);
+        stack.AddStack(3);
+        stack.AddStack(4);
+        stack.AddStack(5);
+
+        var stackOnTop = stack.Pop();
+        Console.WriteLine(stackOnTop);
+
     }
 }
