@@ -1,7 +1,6 @@
 ﻿namespace Generics;
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 public class ArrayOperations<T> where T : IComparable<T>
@@ -15,8 +14,10 @@ public class ArrayOperations<T> where T : IComparable<T>
     {
         if (array == null || array.Length == 0)
         {
+
             return default;
         }
+
         return array.Max();
     }
 
@@ -29,8 +30,10 @@ public class ArrayOperations<T> where T : IComparable<T>
     {
         if (array == null || array.Length == 0)
         {
+
             return default;
         }
+
         return array.Min();
     }
 
