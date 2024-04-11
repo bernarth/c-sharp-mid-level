@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DataStruturesPartI;
 
-namespace DataStruturesPartI;
-
-internal class MyStack<T>
+public class MyStack<T>
 {
     private StackNode<T> _topStack;
 
@@ -31,25 +25,32 @@ internal class MyStack<T>
         }
     }
 
-    public T Pop()
-    {
-        T value = default;
-
+    public void Pop()
+    {    
         if (StackIsEmpty())
         {
-            Console.WriteLine("Stack is empty");            
+            PrintStackEmpty();             
         }
         else
         {
-            value = _topStack.Data;
+            T value = _topStack.Data;
             _topStack = _topStack.Next;
-        }     
-
-        return value;
+            PrintStack(value);
+        }        
     }
 
     public bool StackIsEmpty()
     {
         return _topStack == null;
+    }
+
+    public void PrintStackEmpty()
+    {
+        Console.WriteLine("Stack is empty");
+    }
+
+    public void PrintStack(T value)
+    {
+        Console.WriteLine(value);
     }
 }
