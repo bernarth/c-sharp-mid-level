@@ -31,6 +31,5 @@ class Program
         stack.AddStack(8);
 
         stack.Pop();
-
     }
 }
