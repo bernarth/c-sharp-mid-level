@@ -9,6 +9,7 @@ namespace DataStruturesPartI;
 internal class MyStack<T>
 {
     private StackNode<T> _topStack;
+
     public MyStack() 
     {
         _topStack = null;
@@ -20,25 +21,23 @@ internal class MyStack<T>
 
         if (newStack == null )
         {
-            _topStack = newStack;
-            
+            _topStack = newStack;            
         }
         else
         {
             var stackIn = _topStack;
             _topStack = newStack;
-            _topStack.Next = _topStack;
-            
+            _topStack.Next = _topStack;            
         }
     }
 
     public T Pop()
     {
         T value = default;
+
         if (StackIsEmpty())
         {
-            Console.WriteLine("Stack is empty");
-            
+            Console.WriteLine("Stack is empty");            
         }
         else
         {
@@ -47,7 +46,6 @@ internal class MyStack<T>
         }     
 
         return value;
-
     }
 
     public bool StackIsEmpty()
