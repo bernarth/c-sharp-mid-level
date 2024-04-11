@@ -40,7 +40,6 @@ public class MyStack<T>
 
     public bool IsEmpty()
     {
-
         return _top == null;
     }
 }
