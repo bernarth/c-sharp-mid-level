@@ -39,7 +39,14 @@ class Program
         linked.Add("M83");
         linked.Add("The Strokers");
 
+        // Print before deleting
         linked.PrintLinked();
 
+        linked.Remove("Nightwish");
+
+        Console.WriteLine();
+        Console.WriteLine("Print after deleting");
+        // Print after deleting
+        linked.PrintLinked();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace DataStruturesPartI;
+﻿using System.Xml.Linq;
+
+namespace DataStruturesPartI;
 
 public class MyLinkedList<T>
 {
@@ -40,5 +42,44 @@ public class MyLinkedList<T>
             Console.WriteLine(node.Data);
             node = node.Previous;
         }
+    }
+
+    public LinkedNode<T> Find(T data)
+    {
+        LinkedNode<T> result = _current;
+        LinkedNode<T> node = _current;
+
+        while (node != null)
+        {
+            if (node.Data.Equals(data))
+            {
+                result = node; 
+            }
+            node = node.Previous;
+        }
+
+        return result;
+    }
+
+    public void Remove(T data)
+    {
+        LinkedNode<T> result = Find(data);
+
+        if (result != null)
+        {
+            var previus = result.Previous;
+            var next = result.Next;
+
+            if (previus != null)
+            {
+                previus.Next = next;    
+            }
+
+            if (next != null)
+            {
+                next.Previous = previus;
+            }
+        }
+
     }
 }
