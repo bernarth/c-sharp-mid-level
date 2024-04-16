@@ -8,7 +8,7 @@
         /// </summary>
         /// <param name="firstNumber">The first number.</param>
         /// <param name="secondNumber">The second number.</param>
-        /// <returns></returns>
+        /// <returns>The greatest common divisor.</returns>
         public static int GetGreatestCommonDivisor(int firstNumber, int secondNumber)
         {
             if (secondNumber == 0)
