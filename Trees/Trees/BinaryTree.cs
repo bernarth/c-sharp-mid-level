@@ -1,4 +1,6 @@
-﻿namespace Trees;
+﻿using System.Xml.Linq;
+
+namespace Trees;
 
 public class BinaryTree<T> where T : struct, IComparable<T>
 {
@@ -59,6 +61,31 @@ public class BinaryTree<T> where T : struct, IComparable<T>
             PrintPostOrder(node.Left);
             PrintPostOrder(node.Right);
             Console.Write($"{node.Data} ");
+        }
+    }
+
+    public bool Find(T data)
+    {
+        return Find(Root, data);
+    }
+
+    private static bool Find(BinaryTreeNode<T> node, T data)
+    {
+        if (node == null)
+        {
+            return false;
+        }
+        else if (data.CompareTo(node.Data) < 0)
+        {
+            return Find(node.Left, data);
+        }
+        else if (data.CompareTo(node.Data) > 0)
+        {
+            return Find(node.Right, data);
+        }
+        else
+        {
+            return true;
         }
     }
 }
