@@ -34,5 +34,31 @@ public class Program
         secondBinaryTree.PrintPreOrder(secondBinaryTree.Root);
         Console.WriteLine($"\nDoes 5 exist? {secondBinaryTree.Find(5)}");
         Console.WriteLine($"Does 100 exist? {secondBinaryTree.Find(100)}");
+
+        // BFS
+        binaryTree.BreadthFirstSearchQueue();
+        Console.WriteLine();
+        binaryTree.BreadthFirstSearchStack();
+
+        // N-ary tree
+        var tree = new TreeNode<int>(0);
+        tree.AddChildren(1)
+                .AddChildren(2)
+                    .AddChildren(3)
+                        .AddChildren(4)
+                            .Parent
+                        .AddChildren(5)
+                            .Parent
+                        .Parent
+                    .AddChildren(6)
+                        .Parent
+                    .AddChildren(7)
+                        .Parent
+                    .AddChildren(8);
+
+        // Complete the Show method
+        tree.Show();
+        // Implement the Find method
+        //tree.Find(...);
     }
 }
