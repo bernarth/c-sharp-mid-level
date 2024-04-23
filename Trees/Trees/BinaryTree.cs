@@ -88,4 +88,60 @@ public class BinaryTree<T> where T : struct, IComparable<T>
             return true;
         }
     }
+
+    public void BreadthFirstSearchQueue()
+    {
+        if (Root == null)
+        {
+            return;
+        }
+
+        var queue = new Queue<BinaryTreeNode<T>>();
+        queue.Enqueue(Root);
+
+        while (queue.Count > 0)
+        {
+            var currentNode = queue.Dequeue();
+
+            Console.Write($"{currentNode.Data} ");
+
+            if (currentNode.Left != null)
+            {
+                queue.Enqueue(currentNode.Left);
+            }
+
+            if (currentNode.Right != null)
+            {
+                queue.Enqueue(currentNode.Right);
+            }
+        }
+    }
+
+    public void BreadthFirstSearchStack()
+    {
+        if (Root == null)
+        {
+            return;
+        }
+
+        var stack = new Stack<BinaryTreeNode<T>>();
+        stack.Push(Root);
+
+        while (stack.Count > 0)
+        {
+            var currentNode = stack.Pop();
+
+            Console.Write($"{currentNode.Data} ");
+
+            if (currentNode.Left != null)
+            {
+                stack.Push(currentNode.Left);
+            }
+
+            if (currentNode.Right != null)
+            {
+                stack.Push(currentNode.Right);
+            }
+        }
+    }
 }
