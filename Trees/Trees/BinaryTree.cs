@@ -1,4 +1,6 @@
-﻿namespace Trees;
+﻿using System.Runtime.Intrinsics.X86;
+
+namespace Trees;
 
 public class BinaryTree<T> where T : struct, IComparable<T>
 {
@@ -60,5 +62,35 @@ public class BinaryTree<T> where T : struct, IComparable<T>
             PrintPostOrder(node.Right);
             Console.Write($"{node.Data} ");
         }
+    }
+
+    public bool Find(BinaryTreeNode<T> node, T data)
+    {
+        bool found = false;
+        
+        if (node == null)
+        {
+            found = false;
+        }
+
+        if (node != null)
+        {
+            var comparison = data.CompareTo(node.Data);
+
+            if (comparison < 0)
+            {
+                found = Find(node.Left, data);
+            }
+            else if (comparison > 0)
+            {
+                found = Find(node.Right, data);
+            }
+            else
+            {
+                found = true;
+            }
+        }  
+
+        return found;
     }
 }
