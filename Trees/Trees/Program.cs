@@ -20,6 +20,7 @@ public class Program
         binaryTree.PrintPostOrder(binaryTree.Root);
 
         // Binary Search
-
+        var data = 8;
+        Console.WriteLine($"\n{binaryTree.Find(binaryTree.Root,data)}");
     }
 }
