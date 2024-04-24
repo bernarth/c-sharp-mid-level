@@ -23,5 +23,12 @@ public class Program
 
         Console.Write("Get Integers From List: ");
         FilteringSolution.PrintList(listInteger);
+
+        var listIntegers = new int[] { 1, 1, 2, 3, 1, 2, 3, 4, 4, 3, 5, 6, 7, 2, 8 };
+        var listValuesToRemove = new int[] { 1, 3, 4, 2 };
+
+        var listAfterRemovingMarkedElements = RemoveMarkedElementsSolution.Remove(listIntegers, listValuesToRemove);
+        Console.Write("Remove All The Marked Elements of a List: ");
+        RemoveMarkedElementsSolution.PrintList(listAfterRemovingMarkedElements);
     }
 }
