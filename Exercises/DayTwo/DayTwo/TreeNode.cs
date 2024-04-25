@@ -12,8 +12,23 @@ namespace DayTwo
         public TreeNode right;
 
         public static bool IsPerfect(TreeNode root)
-        {
+        {          
+            if(root == null || Depth(root.left) == Depth(root.right) && IsPerfect(root.left) && IsPerfect(root.right))
+            {
+                return true;
+            }
+
             return false; // TODO: implementation
+        }
+
+        public static int Depth(TreeNode root)
+        {
+            if (root == null)
+            {
+                return 0;
+            }
+
+            return 1 + Math.Max(Depth(root.left), Depth(root.right));
         }
 
         public static TreeNode Leaf()
