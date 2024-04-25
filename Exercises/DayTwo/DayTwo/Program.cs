@@ -6,7 +6,7 @@
         {
             TreeNode root = TreeNode.Leaf().WithLeaves();
             Console.WriteLine(TreeNode.IsPerfect(root));
-            
+
         }
     }
 }
