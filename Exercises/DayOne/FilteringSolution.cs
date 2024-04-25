@@ -4,28 +4,24 @@ using System.Collections.Generic;
 
 public class FilteringSolution
 {
-    public static List<int> GetIntegersFromList(List<object> listOfItems)
-    {        
-        List<int> result = new List<int>();
+    public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
+    {
+
+        var result = new List<int>();
 
         foreach (object item in listOfItems)
         {
-            if (item is int)
+            if (item.GetType() == typeof(int))
             {
-                int number = (int)item;
-                if (number >= 0)
-                {
-                    result.Add(number);
-                }                
+                result.Add((int)item);
             }
-        }        
+        }
 
         return result;
     }
 
-    public static void PrintList(List<int> list)
+     public static void PrintList(IEnumerable<int> list)
     {
-        string result = string.Join(", ", list);
-        Console.WriteLine(result);
+        Console.WriteLine(string.Join(",", list));
     }
 }
