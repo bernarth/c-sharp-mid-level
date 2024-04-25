@@ -20,7 +20,7 @@ public class FilteringSolution
         return result;
     }
 
-     public static void PrintList(IEnumerable<int> list)
+    public static void PrintList(IEnumerable<int> list)
     {
         Console.WriteLine(string.Join(",", list));
     }
