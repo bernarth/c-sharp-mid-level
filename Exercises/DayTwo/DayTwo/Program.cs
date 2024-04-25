@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            TreeNode root = TreeNode.Leaf().WithLeaves();
+            Console.WriteLine(TreeNode.IsPerfect(root));
+            
         }
     }
 }
