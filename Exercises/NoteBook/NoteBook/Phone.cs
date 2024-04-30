@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoteBook
 {
-    internal class Phone
+    internal class Phone : IPrint
     {
         public string Brand { get; set; }
         public bool Camera4K { get; set; }
@@ -14,9 +14,9 @@ namespace NoteBook
         public int Ram { get; set; }
         public string Color { get; set; }
 
-        public void PrintPhone()
+        public string GetInformation()
         {
-            Console.WriteLine($"Brand:{Brand}\nCamera 4K:{Camera4K}\nOS:{Os}\nRAM:{Ram}\nColor:{Color}\n\n");
+            return $"Brand:{Brand}\nCamera 4K:{Camera4K}\nOS:{Os}\nRAM:{Ram}\nColor:{Color}\n\n";
         }
     }
 }

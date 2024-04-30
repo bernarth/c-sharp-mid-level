@@ -14,29 +14,18 @@
                 Console.WriteLine("4. Exit");
                 string input = Console.ReadLine().ToLower();
 
-                switch (input)
+                Phone phone = new Phone() { Ram = 4, Brand = "Samsung", Camera4K = true, Os = "Android", Color = "White" };
+                Car car = new Car() { Brand = "Susuki", IsNew = true, Model =  2010, Price = 10000 };
+                Person person = new Person() { Name = "Pablo", Description = "n/a", Id = 566775, Title = "Engineer" };
+
+                Dictionary<string, IPrint> pages = new Dictionary<string, IPrint>();
+                pages.Add("1", person);
+                pages.Add("2", car);
+                pages.Add("3", phone);
+
+                if (pages.ContainsKey(input))
                 {
-                    case "person":
-                    case "1":
-                        Console.WriteLine($"You open the page: Person");
-                        break;
-                    case "car":
-                    case "2":
-                        Console.WriteLine($"You open the page: Car");
-                        break;
-                    case "phone":
-                    case "3":
-                        Phone phone = new Phone() {Ram = 4, Brand = "Samsung", Camera4K = true, Os = "Android", Color = "White"};                        
-                        Console.WriteLine($"You open the page: Phone");
-                        phone.PrintPhone();
-                        break;
-                    case "exit":
-                    case "4":
-                        flag = false;
-                        break;
-                    default:
-                        Console.WriteLine("Please select a valid option");
-                        break;
+                    Console.WriteLine(pages[input].GetInformation());
                 }
             }
             
