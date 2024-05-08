@@ -160,6 +160,24 @@ public class Program
         }
 
         // Join Multiple Tables (DS) - Books, Authors, and Loans to Get Detailed Loan History
+        var detailedBookInformation =
+        from book in libraryData.Books
+        join author in libraryData.Authors on book.AuthorId equals author.AuthorId
+        join loan in libraryData.Loans on book.BookId equals loan.BookId
+        select new
+        {
+            BookTitle = book.Title,
+            AuthorName = author.Name,
+            LoanDateBook = loan.LoanDate,
+            ReturnDateBook = loan.ReturnDate
 
+        };
+
+        Console.WriteLine("\n---excercise---\n");
+
+        foreach (var book in detailedBookInformation)
+        {
+            Console.WriteLine($"Title:{book.BookTitle}, Author:{book.AuthorName}, LoanHistory---LoanDate:{book.LoanDateBook}, ReturnDay:{book.ReturnDateBook}");
+        }
     }
 }
