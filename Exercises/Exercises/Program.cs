@@ -21,6 +21,22 @@ public class Program
         var list = new List<object>() { 1, 2, "a", "b" };
         var listInteger = FilteringSolution.GetIntegersFromList(list);
 
+
+
+        //List<object> list = new List<object>() { 1, 2, "a", -5, 1, "n" };
+        //List<int> newList = FilteringSolution.GetIntegersFromList(list);
+        //FilteringSolution.PrintList(newList);
+
+        Console.WriteLine("kata1: Remove All The Marked Elements of a List\n");
+        int[] nums = [1, 2, -5, 1, 3, 4, 3, 1, 2, 4];
+        int[] remove = [1, 3];
+        int[] result = RemoveElements.Remove(nums, remove);
+
+        Console.Write($"{string.Join(",", result)}");
+
+        Console.WriteLine("\n\nkata2: Find Count of Most Frequent Item in an Array\n");
+        int[] collection = [3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3];
+        Console.WriteLine(CountMostFrequentItem.MostFrequentItem(collection));
         Console.Write("Get Integers From List: ");
         FilteringSolution.PrintList(listInteger);
     }
