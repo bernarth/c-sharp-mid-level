@@ -57,8 +57,12 @@ public class Program
                     .AddChildren(8);
 
         // Complete the Show method
+        Console.WriteLine("\nShow method");
         tree.Show();
+
         // Implement the Find method
-        //tree.Find(...);
+        Console.WriteLine($"Does 4 exist?: {tree.Find(4)}");
+        Console.WriteLine($"Does 8 exist?: {tree.Find(8)}");
+        Console.WriteLine($"Does 9 exist?: {tree.Find(9)}");
     }
 }
