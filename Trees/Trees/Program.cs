@@ -57,8 +57,11 @@ public class Program
                     .AddChildren(8);
 
         // Complete the Show method
+        Console.WriteLine($"\nShow");
         tree.Show();
         // Implement the Find method
         //tree.Find(...);
+        int dataToFind = 8;
+        Console.WriteLine($"The value {dataToFind} exist in the tree? {tree.Find(tree, dataToFind)}");
     }
 }

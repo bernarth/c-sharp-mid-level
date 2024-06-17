@@ -38,8 +38,35 @@ public class TreeNode<T> where T : struct, IComparable<T>
 
             foreach ( var child in currentNode.Children )
             {
-                // complete
+                queue.Enqueue((TreeNode<T>)child);
             }
         }
+    }
+
+    public bool Find(TreeNode<T> node, T data)
+    {
+        bool found = false;
+
+        if (node == null)
+        {
+            found = false;
+        }
+
+        var comparison = data.CompareTo(node.Data);
+
+        if (comparison == 0)
+        {
+            found = true;
+        }
+
+        foreach( var child in node.Children)
+        {
+            if (Find(child, data))
+            {
+                found = true;
+            }
+        }        
+
+        return found;
     }
 }
